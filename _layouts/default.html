@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--     <meta property=“og:image” content="https://ibb.co/hgBdWWf” />
+    <meta property=”og:image:width” content=”1233″ />
+    <meta property=”og:image:height” content=”1147″ /> -->
+    
+    <title>Porfolio | Rebecca Truong</title>
 
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]
+    {% include head-custom.html %}
+  <style>
+    .social-icon {
+      text-decoration: none;
+    }
+  </style>
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a 
+              href="{{ "/" | absolute_url }}" 
+              style="font:50px 'Noto Serif'; 
+              font-weight:700; 
+              line-height:0.9em; 
+              color:#0070E0;
+              margin:0;"
+            >{{ site.title | default: site.github.repository_name }}</a></h1>
+        
+        <p style="margin:0 0 15px; font-size:20px; line-height:1em; border-top-width:0; padding:0;">{{ site.description | default: site.github.project_tagline }} </p>
+<!-- color:#0070E0;  -->
+        
+
+<a href="https://github.com/rebeccatruong7/Data-Projects" target="_blank" style="padding-right:5px;">
+                    <img src="assets/img/github-alt.svg" alt="github" width="30" height="30">
+                </a>
+                <a href="https://public.tableau.com/app/profile/rebecca2375/vizzes" target="_blank" style="padding-left:5px; padding-right:5px;">
+                    <img src="assets/img/tableau-icon.svg" alt="tableau" width="30" height="30" >
+                </a>
+                <a href="https://www.linkedin.com/in/rebeccatruong7/" target="_blank"style="padding-left:5px; padding-right:5px;">
+                    <img src="assets/img/linkedin-in.svg" alt="linkedin" width="30" height="30">
+                </a>
+<!--                <a href="file.pdf" target="_blank">
+                 <img src="assets/img/envelope-regular.svg" alt="email" width="30" height="30" style="padding-left:5px; padding-right:5px;"> -->
+
+        
+        {% if site.logo %}
+          <img src="{{site.logo | relative_url}}" alt="Logo" style="margin:0; padding:20px 0 0 0;"/>
+        {% endif %}
+
+        
+
+        
+        
+<!--         <p style="margin:0 0 0; font-size:12px">Illustration by me.</p>
+      
+          OG Photo by <a href="https://unsplash.com/photos/M8xxVih_V_U">David Troeger.</a> -->
+
+<!--         <br>
+        
+        <!-- Note to anyone copying the HTML for the following counter: 
+        the counter name ("username" on this page) must be unique.
+        Otherwise different pages will increment the same counter. See
+        http://stuff.mit.edu/doc/counter-howto.html. -->
+        
+<!--         <p> This page has been accessed at least<br>
+        <a href="http://stuff.mit.edu/doc/counter-howto.html"><img 
+        src="http://stuff.mit.edu/cgi/counter/rebeccatruong7" alt="several"></a>
+        times since July 27th, 2023.</p>
+        
+        <br>  -->
+        
+<!--         <p><small>I created this website!</small></p> -->
+
+        
+      </header>
+      <section>
+
+      {{ content }}
+
+      </section>
+      
+      <footer style="width:100%; bottom:5px;">
+<!--         {% if site.github.is_project_page %}
+        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <br> -->
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
