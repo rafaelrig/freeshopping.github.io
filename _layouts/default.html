@@ -1,103 +1,182 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--     <meta property=“og:image” content="https://ibb.co/hgBdWWf” />
-    <meta property=”og:image:width” content=”1233″ />
-    <meta property=”og:image:height” content=”1147″ /> -->
-    
-    <title>Porfolio | Rebecca Truong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech & Culture Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .article-content h1, .article-content h2, .article-content h3 {
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .article-content h1 { font-size: 2.25rem; }
+        .article-content h2 { font-size: 1.75rem; }
+        .article-content p, .article-content ul, .article-content ol {
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .comment-section {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        .comment-form textarea {
+            min-height: 100px;
+        }
+        .comment {
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        /* Sticky interaction panel */
+        .interaction-panel {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+        }
+        @media (max-width: 768px) {
+            .interaction-panel {
+                bottom: 1rem;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+                background-color: #fff;
+                padding: 0.75rem;
+                border-radius: 9999px;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col items-center">
 
-{% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]
-    {% include head-custom.html %}
-  <style>
-    .social-icon {
-      text-decoration: none;
-    }
-  </style>
+    <!-- Header -->
+    <header class="w-full max-w-4xl mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="font-bold text-2xl text-blue-600">
+            The Thinking Canvas
+        </div>
+        <nav class="hidden md:flex space-x-6 text-gray-600 font-medium">
+            <a href="#" class="hover:text-blue-600 transition">About</a>
+            <a href="#" class="hover:text-blue-600 transition">Topics</a>
+            <a href="#" class="hover:text-blue-600 transition">Contact</a>
+        </nav>
+        <div class="hidden md:block">
+            <input type="text" placeholder="Search..." class="px-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <!-- Mobile menu icon -->
+        <button class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
 
+    <!-- Main Content Area -->
+    <main class="w-full max-w-4xl mx-auto px-4 py-8">
+        <article class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-4 mb-4 text-gray-500">
+                <span>Published on October 26, 2024</span>
+                <span class="hidden md:block">|</span>
+                <span>Category: Technology</span>
+            </div>
+            
+            <div class="article-content">
+                <h1 class="text-4xl font-bold mb-4">The Ethical AI Dilemma: Navigating a New Humanistic Frontier</h1>
+                <p class="text-xl text-gray-600 italic">Exploring the intersection of artificial intelligence and fundamental human values.</p>
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a 
-              href="{{ "/" | absolute_url }}" 
-              style="font:50px 'Noto Serif'; 
-              font-weight:700; 
-              line-height:0.9em; 
-              color:#0070E0;
-              margin:0;"
-            >{{ site.title | default: site.github.repository_name }}</a></h1>
-        
-        <p style="margin:0 0 15px; font-size:20px; line-height:1em; border-top-width:0; padding:0;">{{ site.description | default: site.github.project_tagline }} </p>
-<!-- color:#0070E0;  -->
-        
+                <p>
+                    In an era defined by rapid technological advancement, artificial intelligence (AI) has emerged not just as a tool, but as a defining force shaping our society. It promises to revolutionize everything from healthcare to transportation, but with this power comes a profound ethical responsibility. How do we ensure that the algorithms we build align with our most fundamental humanistic values? This is the central challenge of the AI age.
+                </p>
+                <p>
+                    The dilemma is complex. On one hand, AI offers unprecedented efficiency and the potential to solve some of humanity's most pressing problems. On the other, it introduces new risks, including algorithmic bias, job displacement, and the erosion of personal privacy. The decisions we make today about AI's design and deployment will have a lasting impact on future generations.
+                </p>
+                <img src="https://placehold.co/800x450/333333/ffffff?text=AI+Ethics" alt="A visual representation of artificial intelligence ethics" class="w-full rounded-lg my-8">
+                
+                <h2>Algorithmic Bias and Fairness</h2>
+                <p>
+                    One of the most urgent ethical issues in AI is **algorithmic bias**. AI systems are trained on vast datasets, and if these datasets reflect historical or societal biases, the AI will learn and perpetuate them. This can lead to unfair outcomes in areas like hiring, loan applications, and criminal justice.
+                </p>
+                <p>
+                    To combat this, developers and researchers must actively work to audit their data, ensure its diversity, and implement fairness metrics to evaluate and correct biased models. It's a continuous process that requires a multi-disciplinary approach, involving not just data scientists but also ethicists and sociologists.
+                </p>
 
-<a href="https://github.com/rebeccatruong7/Data-Projects" target="_blank" style="padding-right:5px;">
-                    <img src="assets/img/github-alt.svg" alt="github" width="30" height="30">
-                </a>
-                <a href="https://public.tableau.com/app/profile/rebecca2375/vizzes" target="_blank" style="padding-left:5px; padding-right:5px;">
-                    <img src="assets/img/tableau-icon.svg" alt="tableau" width="30" height="30" >
-                </a>
-                <a href="https://www.linkedin.com/in/rebeccatruong7/" target="_blank"style="padding-left:5px; padding-right:5px;">
-                    <img src="assets/img/linkedin-in.svg" alt="linkedin" width="30" height="30">
-                </a>
-<!--                <a href="file.pdf" target="_blank">
-                 <img src="assets/img/envelope-regular.svg" alt="email" width="30" height="30" style="padding-left:5px; padding-right:5px;"> -->
+                <h2>The Future of Work</h2>
+                <p>
+                    The conversation around AI and the **future of work** is often dominated by fears of job displacement. While it's true that some roles will be automated, history shows us that new technologies also create new jobs and opportunities. The key is to focus on education and reskilling.
+                </p>
+                <p>
+                    We have a humanistic obligation to prepare our workforce for this transition. This means investing in lifelong learning programs and fostering skills that are uniquely human, such as critical thinking, creativity, and emotional intelligence, which AI cannot easily replicate.
+                </p>
+            </div>
 
-        
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" style="margin:0; padding:20px 0 0 0;"/>
-        {% endif %}
+            <!-- Comment Section -->
+            <div id="comments" class="comment-section">
+                <h2 class="text-2xl font-bold mb-4">Comments</h2>
+                
+                <!-- Comment Form -->
+                <div class="comment-form bg-gray-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-lg font-semibold mb-2">Leave a Comment</h3>
+                    <form>
+                        <textarea class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Join the discussion..."></textarea>
+                        <div class="flex justify-end mt-2">
+                            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
 
-        
+                <!-- Example Comments -->
+                <div class="comment">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-gray-300 rounded-full mr-3 flex items-center justify-center text-sm font-bold text-gray-600">A</div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Alex</p>
+                            <p class="text-xs text-gray-500">2 days ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">This is a great point about algorithmic bias. I think it's even more complex when you consider the data itself—who gets to decide what a "fair" dataset looks like?</p>
+                </div>
+                <div class="comment">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-gray-300 rounded-full mr-3 flex items-center justify-center text-sm font-bold text-gray-600">E</div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Emily</p>
+                            <p class="text-xs text-gray-500">1 day ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">I'm more worried about job displacement. The "new jobs" argument always seems a little too optimistic. What's the plan for the millions of people who can't be retrained?</p>
+                </div>
 
-        
-        
-<!--         <p style="margin:0 0 0; font-size:12px">Illustration by me.</p>
-      
-          OG Photo by <a href="https://unsplash.com/photos/M8xxVih_V_U">David Troeger.</a> -->
+            </div>
+        </article>
+    </main>
 
-<!--         <br>
-        
-        <!-- Note to anyone copying the HTML for the following counter: 
-        the counter name ("username" on this page) must be unique.
-        Otherwise different pages will increment the same counter. See
-        http://stuff.mit.edu/doc/counter-howto.html. -->
-        
-<!--         <p> This page has been accessed at least<br>
-        <a href="http://stuff.mit.edu/doc/counter-howto.html"><img 
-        src="http://stuff.mit.edu/cgi/counter/rebeccatruong7" alt="several"></a>
-        times since July 27th, 2023.</p>
-        
-        <br>  -->
-        
-<!--         <p><small>I created this website!</small></p> -->
-
-        
-      </header>
-      <section>
-
-      {{ content }}
-
-      </section>
-      
-      <footer style="width:100%; bottom:5px;">
-<!--         {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <br> -->
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <!-- Sticky Interaction Panel -->
+    <div class="interaction-panel flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+        <!-- Comment Button -->
+        <a href="#comments" class="w-12 h-12 flex items-center justify-center bg-white text-gray-600 rounded-full shadow-lg hover:bg-blue-500 hover:text-white transition cursor-pointer">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.33-4.083A8.841 8.841 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+        </a>
+        <!-- Like Button -->
+        <button class="w-12 h-12 flex items-center justify-center bg-white text-gray-600 rounded-full shadow-lg hover:bg-red-500 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+        </button>
+        <!-- Share Button -->
+        <button class="w-12 h-12 flex items-center justify-center bg-white text-gray-600 rounded-full shadow-lg hover:bg-green-500 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.314l4.94 2.47a3 3 0 10.823-1.645l-4.94-2.47a3 3 0 000-1.024l4.94-2.47C13.456 7.669 14.237 8 15 8z"></path></svg>
+        </button>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  </body>
+
+</body>
 </html>
